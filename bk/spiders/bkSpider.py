@@ -46,7 +46,5 @@ class BkspiderSpider(scrapy.Spider):
         page_url = next_link_node.attrs['page-url'].split('{')[0]
         print(page_url) """
         
-        for i in range(2, 5):
-            yield scrapy.Request("https://sh.ke.com/chengjiao/beicai/pg" + str(i), callback = self.parse)
-        else:
-            print ('done')
+        """ for i in range(2, 5):
+            yield scrapy.Request("https://sh.ke.com/chengjiao/beicai/pg" + str(i), callback = self.parse) """

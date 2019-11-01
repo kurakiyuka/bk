@@ -64,9 +64,9 @@ DOWNLOAD_DELAY = 10
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'bk.pipelines.BkPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'bk.pipelines.BkPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,3 +88,8 @@ DOWNLOAD_DELAY = 10
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+mysql_host = 'localhost'
+mysql_port = 3306
+mysql_db_name = 'test'
+mysql_table_name = 'bigtable'
