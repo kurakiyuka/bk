@@ -11,38 +11,42 @@ class BkspiderSpider(scrapy.Spider):
 
     def parse(self, response):
         soup = BeautifulSoup(response.text, 'lxml')
-        resultList = []
         houseinfo = soup.findAll('div', class_='info')
 
         for house in houseinfo:
             bk_item = BkItem()
             list1 = house.find('a').contents[0].split()
-            reslist = []
             bk_item['community_name'] = list1[0]
-            reslist.append(list1[0])
             
+            # 这段文本有可能是车位，那就忽略掉此节点
             if len(list1[1]) > 3:
-                reslist.append(list1[1][0])
-                reslist.append(list1[1][2])
+                bk_item['shi_num'] = list1[1][0]
+                bk_item['ting_num'] = list1[1][2]
             else:
                 continue
-            reslist.append(list1[2][:-2])
+
+            bk_item['area'] = list1[2][:-2]
             
             list2 = house.find('div', class_='houseInfo').contents[2].strip().split('|')
-            reslist.append(list2[0].strip())
-            reslist.append(list2[1].strip())
+            bk_item['direction'] = list2[0].strip()
+            bk_item['decoration'] = list2[1].strip()
             
-            list3 = house.find('div', class_='dealDate').contents[0].strip()
-            reslist.append(list3)
+            bk_item['deal_date'] = house.find('div', class_='dealDate').contents[0].strip()          
+            bk_item['total_price'] = house.findAll('span', class_='number')[0].contents[0]
+            bk_item['unit_price'] = house.findAll('span', class_='number')[1].contents[0]
             
-            list41 = house.findAll('span', class_='number')[0].contents[0]
-            reslist.append(list41)
-            list42 = house.findAll('span', class_='number')[1].contents[0]
-            reslist.append(list42)
-            
-            list5 = house.find('div', class_='positionInfo').contents[2].strip().split()
-            reslist.append(list5[0])
-            
-            resultList.append(reslist)
+            list3 = house.find('div', class_='positionInfo').contents[2].strip().split()
+            bk_item['layer'] = list3[0]
+
+            yield bk_item
+
+        """ next_link_node = soup.find('div', class_ = 'page-box house-lst-page-box')
+        page_data = next_link_node.attrs['page-data'].split(',')[0].split(':')[1]
+        print(page_data)
+        page_url = next_link_node.attrs['page-url'].split('{')[0]
+        print(page_url) """
         
-        print(resultList)
+        for i in range(2, 5):
+            yield scrapy.Request("https://sh.ke.com/chengjiao/beicai/pg" + str(i), callback = self.parse)
+        else:
+            print ('done')

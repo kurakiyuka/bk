@@ -1,0 +1,53 @@
+{
+    "pudong": [
+        "beicai", "biyun", "caolu", "chuansha", "datuanzhen", "gaodong", "gaohang", "geqing", "hangtou", "huamu", "huinan", "jinqiao", "jinyang", "kangqiao", "laogangzhen", "lianyang", "lingangxincheng", "lujiazui", "nanmatou", "nichengzhen", "sanlin", "shibo", "shuyuanzhen", "tangqiao", "tangzhen", "waigaoqiao", "wanxiangzhen", "weifang", "xinchang", "xuanqiao", "yangdong", "yangjing", "yuanshen", "yuqiao1", "zhangjiang", "zhoupu", "zhuqiao"
+    ],
+    "minhang": [
+        "chunshen", "gumei", "hanghua", "huacao", "jinganxincheng", "jinhongqiao", "jinhui", "laominhang", "longbai", "maqiao", "meilong", "pujiang1", "qibao", "wujing", "xinzhuang5", "zhuanqiao"
+    ],
+    "baoshan": [
+        "dachangzhen", "dahua", "gaojing", "gongfu", "gongkang", "gucun", "luodian", "luojing", "shangda", "songbao", "songnan", "tonghe", "yanghang", "yuepu", "zhangmiao"
+    ],
+    "xuhui": [
+        "caohejing", "changqiao", "hengshanlu", "huadongligong", "huajing", "jianguoxilu", "kangjian", "longhua", "shanghainanzhan", "tianlin", "wantiguan", "xietulu", "xuhuibinjiang", "xujiahui", "zhiwuyuan"
+    ],
+    "putuo": [
+
+    ],
+    "yangpu": [
+
+    ],
+    "changning": [
+
+    ],
+    "songjiang": [
+
+    ],
+    "jiading": [
+
+    ],
+    "huangpu": [
+
+    ],
+    "jingan": [
+
+    ],
+    "hongkou": [
+
+    ],
+    "qingpu": [
+
+    ],
+    "fengxian": [
+
+    ],
+    "jinshan": [
+
+    ],
+    "chongming": [
+
+    ],
+    "shanghaizhoubian": [
+
+    ]
+}
